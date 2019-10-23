@@ -1,0 +1,23 @@
+﻿@model  gyak5.Models.Diak
+@{
+    ViewBag.Title = "FormHelper";
+}
+
+<h2>FormHelper</h2>
+@using (@Html.BeginForm("Formhelper", "Form", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Nev) <br />
+    @Html.TextBoxFor(m => m.Nev) <br />
+    @Html.LabelFor(m => m.PontSzam) <br />
+    @Html.TextBoxFor(m => m.PontSzam) <br />
+    <input type="submit" name="submit" value="Tovább" />
+}
+
+@if (Model != null)
+{
+    <ul>
+        <li>@Model.Nev</li>
+        <li>@Model.PontSzam</li>
+    </ul>
+}
+
