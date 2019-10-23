@@ -1,4 +1,4 @@
-﻿@model  gyak5.Input_Helper_Form.Models.Diak
+﻿@model  gyak5.Validation.Models.Diak
 @{
     ViewBag.Title = "FormHelper";
 }
@@ -8,8 +8,10 @@
 {
     @Html.LabelFor(m => m.Nev) <br />
     @Html.TextBoxFor(m => m.Nev) <br />
+    @Html.ValidationMessageFor(m => m.Nev) <br />
     @Html.LabelFor(m => m.PontSzam) <br />
     @Html.TextBoxFor(m => m.PontSzam) <br />
+    @Html.ValidationMessageFor(m => m.PontSzam) <br />
     <input type="submit" name="submit" value="Tovább" />
 }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace gyak5.Controllers
+namespace gyak5.Validation.Controllers
 {
     public class FormController : Controller
     {
@@ -13,7 +13,7 @@ namespace gyak5.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult FormHelper(Input_Helper_Form.Models.Diak d)
+        public ActionResult FormHelper(Validation.Models.Diak d)
         {
             return View(d);
         }
@@ -22,9 +22,14 @@ namespace gyak5.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult FormHtml(Input_Helper_Form.Models.Diak d)
+        public ActionResult FormHtml(Validation.Models.Diak d)
         {
             return View(d);
         }
+        public ActionResult FormHelperRequest()
+        {
+            return View();
+        }
+
     }
 }

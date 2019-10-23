@@ -1,4 +1,4 @@
-﻿@model gyak5.Input_Helper_Form.Models.Diak
+﻿@model gyak5.Validation.Models.Diak
 @{
     ViewBag.Title = "FormHtml";
 }
@@ -6,12 +6,14 @@
 <h2>FormHtml</h2>
 <form action="/Form/FormHtml" method="post">
     <div class="form-group">
-        <label class="form-control col-2" for="Nev">Név</label>
+        <label class="form-control" for="Nev"></label>
         <input class="form-control" type="text" name="Nev" value="" />
+        <small>@Html.ValidationMessageFor(m => m.Nev)</small>
     </div>
     <div class="form-group">
-        <label class="form-control" for="PontSzam">Pont szám</label>
+        <label class="form-control" for="PontSzam"></label>
         <input class="form-control" type="number" name="PontSzam" value="" />
+        <small>@Html.ValidationMessageFor(m => m.PontSzam)</small>
     </div>
     <div class="form-group">
         <input type="submit" name="submit" value="Tovább" class="btn btn-primary" />
