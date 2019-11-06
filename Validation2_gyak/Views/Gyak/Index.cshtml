@@ -1,0 +1,50 @@
+﻿@model Validation2_gyak.Models.RandomModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<form action="/Gyak" method="post">
+    @if (Request["Nev"] != null)
+    {
+        <p>Nem null</p>
+        <br />
+    }
+    @Html.LabelFor(model => model.Nev)
+    @{ if (Model != null)
+        {
+            <p>@Model.Nev</p>
+        }
+        else
+        {
+            @Html.TextAreaFor(model => model.Nev)
+            @Html.ValidationMessageFor(model => model.Nev)
+        }
+    }
+    <br />
+    @Html.LabelFor(model => model.Integer)
+    @{ if (Model != null)
+        {
+            <p>@Model.Integer</p>
+        }
+        else
+        {
+            @Html.TextAreaFor(model => model.Integer)
+            @Html.ValidationMessageFor(model => model.Integer)
+        }
+    }
+    <br />
+    @Html.LabelFor(model => model.Character)
+    @{ if (Model != null)
+        {
+            <p>@Model.Character</p>
+        }
+        else
+        {
+            @Html.TextAreaFor(model => model.Character)
+            @Html.ValidationMessageFor(model => model.Character)
+        }
+    }
+    <br />
+    <input type="submit" name="submit" value="Tovább" />
+</form>
